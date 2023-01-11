@@ -1,0 +1,142 @@
+/*
+    Projeto para estudos, totalmente comentado para melhor visualização e entendimento do código
+
+    link do repositório
+*/
+
+/* Definições para todos os elementos */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #1E1E1E;
+}
+body * {
+    font-family: 'Roboto', sans-serif
+}
+
+/* Container para todos os players */
+#app {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    place-content: center;
+    grid-template-areas:
+    'A B'
+    'A C';
+    gap: 2rem;
+}
+
+/* Player 1 */
+#player-1 {
+    grid-area: A;
+    padding: 3.125rem 2.375rem; /*50px*/ /*38px*/
+}
+/* Área da imagem da música */
+#player-1 .wrapper {
+    width: 11.875rem; /*190px*/
+}
+#player-1 img {
+    border-radius: 6px;
+    width: 11.875rem;
+    height: 11.875rem;
+    object-fit: cover;
+}
+/* Informações da música no player */
+#player-1 .info {
+    margin-top: 1.75rem; /*28px*/
+}
+
+
+/* Player 2 */
+#player-2 {
+    grid-area: B;
+}
+
+/* Player 3 */
+#player-3 {
+    grid-area: C;
+}
+
+/* Definições para todos os players */
+.player {
+    padding: 1.75rem;
+    background-color: #2A2141;
+    border-radius: 0.625rem; /*10px*/
+}
+
+/* Informações da música */
+.info {
+    color: #E1E1E6;
+    display: grid;
+    gap: 0.625rem;
+}
+
+/* Título da música */
+.info h1 {
+    font-size: 1.5rem; /*24px*/
+}
+
+/* Artista / Compositor / Banda */
+.info p {
+    opacity: 67%;
+    font-size: 1.1rem;
+    
+}
+
+/*Área de controles / voltar música / pausar ou dar play / próxima música*/
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.75rem;
+}
+
+/* Ação para quando o mouse / cursor passar pelos "controls" */
+.controls .prev:hover,
+.controls .play:hover, 
+.controls .next:hover {
+    opacity: 60%;
+}
+
+/* Barra de % da música */
+.track {
+    margin-top: 1.75rem;
+    position: relative;
+}
+
+/* Barra de tamanho total  da música */
+.track::before {
+    position: absolute;
+
+    content: '';
+    height: 6px;
+    width: 100%;
+    display: block;
+    background: #D9D9D9;
+    opacity: 0.3;
+    border-radius: 0.625rem;
+}
+/* Barra de progresso da música */
+.track::after {
+    content: '';
+    height: 6px;
+    width: 80%;
+    display: block;
+    background: #D9D9D9;
+    border-radius: 0.625rem;
+}
+
+/* Tempo total da música e tempo que falta para acabar */
+.time {
+    color: #C4C4C4;
+    font-size: 0.9rem;
+    opacity: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.625rem;
+}
