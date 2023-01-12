@@ -39,19 +39,17 @@ body * {
 }
 /* Área da imagem da música */
 #player-1 .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 11.875rem; /*190px*/
 }
 #player-1 img {
-    border-radius: 6px;
     width: 11.875rem;
     height: 11.875rem;
     object-fit: cover;
-    transition: all 0.5s;
 }
-#player-1 img:hover {
-    opacity: 0.9;
-    scale: 1.1;
-}
+
 /* Informações da música no player */
 #player-1 .info {
     margin-top: 1.75rem; /*28px*/
@@ -61,6 +59,7 @@ body * {
 /* Player 2 */
 #player-2 {
     grid-area: B;
+    height: fit-content;
 }
 
 /* Player 3 */
@@ -74,16 +73,31 @@ body * {
     background-color: #2A2141;
     border-radius: 0.625rem; /*10px*/
 }
+.player img {
+    border-radius: 6px;
+    transition: all 0.5s;
+    width: 5.25rem;
+    height: 5.25rem;
+}
+.player img:hover {
+    opacity: 0.9;
+    scale: 1.05;
+}
+
+.info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+}
 
 /* Informações da música */
 .info {
     color: #E1E1E6;
-    display: grid;
-    gap: 0.625rem;
 }
 
 /* Título da música */
 .info h1 {
+    margin-bottom: 0.625rem;
     font-size: 1.5rem; /*24px*/
     transition: all 0.5s;
 }
@@ -102,9 +116,14 @@ body * {
 
 /*Área de controles / voltar música / pausar ou dar play / próxima música*/
 .controls {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 1.75rem;
+}
+
+.horizontal .controls {
+    padding-inline: 3.625rem;
 }
 
 .controls .prev,
@@ -149,6 +168,9 @@ body * {
     border-radius: 0.625rem;
 }
 
+.track-time {
+    width: 100%;
+}
 /* Tempo total da música e tempo que falta para acabar */
 .time {
     color: #C4C4C4;
