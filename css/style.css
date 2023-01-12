@@ -46,6 +46,11 @@ body * {
     width: 11.875rem;
     height: 11.875rem;
     object-fit: cover;
+    transition: all 0.5s;
+}
+#player-1 img:hover {
+    opacity: 0.9;
+    scale: 1.1;
 }
 /* Informações da música no player */
 #player-1 .info {
@@ -80,13 +85,19 @@ body * {
 /* Título da música */
 .info h1 {
     font-size: 1.5rem; /*24px*/
+    transition: all 0.5s;
+}
+.info h1:hover {
+    cursor: default;
 }
 
 /* Artista / Compositor / Banda */
 .info p {
     opacity: 67%;
     font-size: 1.1rem;
-    
+}
+.info p:hover {
+    cursor: default;
 }
 
 /*Área de controles / voltar música / pausar ou dar play / próxima música*/
@@ -96,10 +107,17 @@ body * {
     margin-top: 1.75rem;
 }
 
+.controls .prev,
+.controls .play,
+.controls .next {
+    transition: all 0.2s;
+}
+
 /* Ação para quando o mouse / cursor passar pelos "controls" */
 .controls .prev:hover,
 .controls .play:hover, 
 .controls .next:hover {
+    scale: 1.10;
     opacity: 60%;
 }
 
@@ -139,4 +157,12 @@ body * {
     display: flex;
     justify-content: space-between;
     margin-top: 0.625rem;
+}
+
+.lasting-time, .total-time {
+    transition: all 0.5s;
+}
+.lasting-time:hover, .total-time:hover {
+    color: #FFF;
+    cursor: default;
 }
